@@ -1,8 +1,18 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+
 .artwork {
-  width: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
 .artwork img {
   width: 100%;
   height: auto;
+  display: block;
 }
