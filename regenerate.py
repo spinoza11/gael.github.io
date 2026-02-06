@@ -2,24 +2,24 @@ import time
 import os
 
 def generate_artwork_block(image_name,title,year,medium,available):
-   
+    medium_string = medium.replace('_',' ')
     tag_string = ' '.join([medium,available])
     return f"""
     <div class="artwork" data-tags="{tag_string}">
         <button class="artwork-button"
                 data-title="{title}"
-                data-meta="{medium} · {year}"
+                data-meta="{medium_string} · {year}"
                 data-image="images/{image_name}">
         <img src="images/{image_name}" alt="{title}">
         </button>
         <h3>{title}</h3>
-        <p>{medium} · {year}</p>
+        <p>{medium_string} · {year}</p>
     </div>
   """
 
 def generate_button(tag):
     return f"""
-            <button data-filter="{tag}">{tag}</button>"""
+            <button data-filter="{tag}">{tag.replace('_',' ')}</button>"""
     
 def generate_filter_buttons(tags):
     return_string = """
