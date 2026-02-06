@@ -95,7 +95,7 @@ def body():
 
 def generate_full_page(filename='index.html'):
 
-    with open(filename, 'w') as f:
+    with open(filename, 'w',encoding="latin-1") as f:
         f.write(header() + body() + footer())
     return header() + body() + footer() 
 
